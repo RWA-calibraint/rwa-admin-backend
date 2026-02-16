@@ -9,7 +9,7 @@ import { InjectModel } from '@nestjs/mongoose';
 
 import axios from 'axios';
 import mongoose, { FilterQuery, Model, Types } from 'mongoose';
-import sharp from 'sharp';
+import * as sharpModule from 'sharp';
 
 import { AssetStatus } from 'src/@typings/enums';
 import { ArweaveService } from 'src/arweave/arweave.service';
@@ -100,6 +100,10 @@ export class AssetsService {
     private blockchainService: BlockchainService,
     private readonly configService: ConfigService,
   ) {}
+
+  sharp = sharpModule as unknown as (
+    input?: Buffer | string,
+  ) => sharpModule.Sharp;
 
   async create(assetDto: CreateAssetDto, coverImage, images, userId) {
     const cover = await this.s3Service.uploadFile(
@@ -1201,7 +1205,7 @@ export class AssetsService {
       throw new BadRequestException('No image file uploaded');
     }
     try {
-      const metadata = await sharp(file.buffer).metadata();
+      const metadata = await this.sharp(file.buffer).metadata();
 
       if (!metadata.format) {
         throw new Error('Unknown image format');
@@ -1217,7 +1221,7 @@ export class AssetsService {
 
       const isAnimated = metadata.pages && metadata.pages > 1;
 
-      const imageData = await sharp(file.buffer)
+      const imageData = await this.sharp(file.buffer)
         .grayscale()
         .raw()
         .toBuffer({ resolveWithObject: true });
