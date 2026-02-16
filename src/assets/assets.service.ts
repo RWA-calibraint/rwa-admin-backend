@@ -9,7 +9,7 @@ import { InjectModel } from '@nestjs/mongoose';
 
 import axios from 'axios';
 import mongoose, { FilterQuery, Model, Types } from 'mongoose';
-import * as sharp from 'sharp';
+import sharp from 'sharp';
 
 import { AssetStatus } from 'src/@typings/enums';
 import { ArweaveService } from 'src/arweave/arweave.service';
