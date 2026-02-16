@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <meta charset='UTF-8' />
+    <title>Account Suspension Notification</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 0; padding: 0;
+      background-color: #f7f7f7; } .email-container { max-width: 600px; margin:
+      30px auto; background: #ffffff; border: 1px solid #e0e0e0; box-shadow: 0
+      2px 4px rgba(0, 0, 0, 0.1); border-radius: 8px; overflow: hidden; }
+      .header img { max-width: 75%; margin: 0 auto; padding: 20px 0; display:
+      flex; justify-content: center; align-items: center; height: auto; }
+      .content { padding: 20px; color: #333333; line-height: 1.6; } .button {
+      display: inline-block; padding: 12px 24px; margin: 20px 0; background:
+      #004080; color: #ffffff; text-decoration: none; border-radius: 4px;
+      font-weight: bold; } .footer { background: #f0f0f0; padding: 15px;
+      text-align: center; font-size: 12px; color: #777777; }
+    </style>
+  </head>
+  <body>
+    <div class='email-container'>
+      <div class='header'>
+        <img
+          src='https://dev-asset-images-874t.s3.ap-south-1.amazonaws.com/uploads/f217566b-ca62-46c4-bae1-1bb065606f32-files-1739893864349-852624433.png'
+          alt='Rare Agora'
+        />
+      </div>
+      <div class='content'>
+        <p>Dear {{userName}},</p>
+        <p>
+          We regret to inform you that your account has been temporarily
+          suspended on RareAgora.
+        </p>
+        <p>This suspension is due to [reason]. During this time, you will not be
+          able to access your account or any associated assets.</p>
+        <p>
+          Your account suspension is scheduled to expire on
+          <strong>{{suspensionExpiryAt}}</strong>. After this date, you will
+          regain full access to your account and its features.
+        </p>
+        <p>
+          If you believe this suspension is in error or if you would like more
+          information, please contact our support team to resolve the issue.
+        </p>
+        <p>
+          <a href="mailto:support@rareagora.com" class='button'>Contact Support</a>
+        </p>
+        <p>We apologize for any inconvenience this may cause and appreciate your
+          understanding.</p>
+        <p>Sincerely,<br />The RareAgora Team</p>
+      </div>
+      <div class='footer'>
+        &copy; 2025 RareAgora. All rights reserved. | support@rareagora.com
+      </div>
+    </div>
+  </body>
+</html>

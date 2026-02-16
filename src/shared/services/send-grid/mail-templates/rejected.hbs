@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <meta charset='UTF-8' />
+    <title>Asset Submission Update</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 0; padding: 0;
+      background-color: #f7f7f7; } .email-container { max-width: 600px; margin:
+      30px auto; background: #ffffff; border: 1px solid #e0e0e0; box-shadow: 0
+      2px 4px rgba(0, 0, 0, 0.1); border-radius: 8px; overflow: hidden; }
+      .header img { max-width: 100%; height: auto; } .content { padding: 20px;
+      color: #333333; line-height: 1.6; } .button { display: inline-block;
+      padding: 12px 24px; margin: 20px 0; background: #cc0000; color: #ffffff;
+      text-decoration: none; border-radius: 4px; font-weight: bold; }
+      .button:hover { background: #a30000; } .footer { background: #f0f0f0;
+      padding: 15px; text-align: center; font-size: 12px; color: #777777; }
+    </style>
+  </head>
+  <body>
+    <div class='email-container'>
+      <div class='header'>
+        <img
+          src='https://dev-asset-images-874t.s3.ap-south-1.amazonaws.com/uploads/f217566b-ca62-46c4-bae1-1bb065606f32-files-1739893864349-852624433.png'
+          alt='Rare Agora'
+        />
+      </div>
+      <div class='content'>
+        <p>Dear {{name}}</p>
+        <p>
+          Thank you for submitting your asset,
+          <strong>{{asset}}</strong>, to RareAgora.
+        </p>
+        <p>
+          After careful review, we regret to inform you that your submission has
+          been rejected.
+        </p>
+        <p><strong>Reason(s) for Rejection:</strong></p>
+        <ul>
+          <li>{{reason}}</li>
+        </ul>
+        <p>
+          To view your asset and make necessary revisions, please click the
+          button below:
+        </p>
+        <p>
+          <a href='{{assetLink}}' class='button'>View Your Asset</a>
+        </p>
+        <p>
+          We encourage you to review our
+          <a href={{link}}>submission guidelines</a>, make the necessary
+          changes, and resubmit your asset.
+        </p>
+        <p>
+          For any further questions, please contact our support team.
+        </p>
+        <p>Best regards,<br />The RareAgora Team</p>
+      </div>
+      <div class='footer'>
+        &copy; 2025 RareAgora. All rights reserved. | support@rareagora.com
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Asset Partial Approval Notice</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f7f7f7;
+      }
+      .email-container {
+        max-width: 600px;
+        margin: 30px auto;
+        background: #ffffff;
+        border: 1px solid #e0e0e0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .header img {
+        max-width: 100%;
+        height: auto;
+      }
+      .content {
+        padding: 20px;
+        color: #333333;
+        line-height: 1.6;
+      }
+      .button {
+        display: inline-block;
+        padding: 12px 24px;
+        margin: 20px 0;
+        background: #004080;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: bold;
+      }
+      .button:hover {
+        background: #003060;
+      }
+      .footer {
+        background: #f0f0f0;
+        padding: 15px;
+        text-align: center;
+        font-size: 12px;
+        color: #777777;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="email-container">
+      <div class="header">
+        <img src="https://dev-asset-images-874t.s3.ap-south-1.amazonaws.com/uploads/f217566b-ca62-46c4-bae1-1bb065606f32-files-1739893864349-852624433.png" alt="Rare Agora" />
+      </div>
+      <div class="content">
+        <p>Dear {{name}},</p>
+        <p>
+          Thank you for submitting your asset,
+          <strong>{{assetName}}</strong>, to RareAgora.
+        </p>
+        <p>
+          Your submission has been partially approved.
+        </p>
+        <p>
+          While several components meet our standards, we have identified some areas that require your attention.
+        </p>
+        <p><strong>Approved Components:</strong></p>
+        <ul>
+          <li>{{approvedElement_1}}</li>
+          <li>{{approvedElement_2}}</li>
+        </ul>
+        <p><strong>Areas for Improvement:</strong></p>
+        <ul>
+          <li>{{improvement_1}}</li>
+          <li>{{improvement_2}}</li>
+        </ul>
+        <p>
+          Please update the necessary areas and resubmit your asset for final approval. You can view detailed feedback in your dashboard by clicking the button below.
+        </p>
+        <p>
+          <a href={{link}} class="button">Review Feedback</a>
+        </p>
+        <p>
+          If you have any questions, our support team is here to help.
+        </p>
+        <p>Warm regards,<br />The RareAgora Team</p>
+      </div>
+      <div class="footer">
+        &copy; 2025 RareAgora. All rights reserved. | support@rareagora.com
+      </div>
+    </div>
+  </body>
+</html>
